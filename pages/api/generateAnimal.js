@@ -17,6 +17,7 @@ export default async function (req, res) {
   }
 
   const animal = req.body.animal || '';
+  const type = req.body.type || '';
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
@@ -25,16 +26,22 @@ export default async function (req, res) {
     });
     return;
   }
+  if (type.trim().length === 0) {
+    res.status(400).json({
+      error: {
+        message: "Please enter a character type",
+      }
+    });
+    return;
+  }
 
   try {
     const completion = await openai.createCompletion({
       model: models.davinci3,
-      prompt: generatePrompt(animal),
+      prompt: generatePrompt(animal, type),
       temperature: 0.6,
     });
     res.status(200).json({ result: completion.data.choices[0].text });
-    console.log('data', fineTune.data);
-    res.status(200).json({ result: fineTune.data.choices[0].text });
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
@@ -51,10 +58,12 @@ export default async function (req, res) {
   }
 }
 
-function generatePrompt(animal) {
+function generatePrompt(animal, type) {
   const capitalizedAnimal =
     animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `Suggest three names for an animal that is a superhero.
+  const capitalizedType =
+    type[0].toUpperCase() + type.slice(1).toLowerCase();
+  return `Suggest three names for an animal that is a ${capitalizedType}.
 
 Animal: Cat
 Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
