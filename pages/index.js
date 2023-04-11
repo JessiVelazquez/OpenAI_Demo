@@ -52,7 +52,7 @@ export default function Home() {
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
-          <h4>Character Type (one word proper noun, i.e. superhero, villian, rockstar)</h4>
+          <h4>Character Type (a noun, i.e. superhero, villian, rockstar)</h4>
           <input
             type="text"
             name="type"
