@@ -44,7 +44,7 @@ export default function Home() {
         <img src="/dog.png" className={styles.icon} />
         <h3>Name my pet</h3>
         <form onSubmit={onSubmit}>
-          <h4>Animal (dog, cat, sasquatch, etc)</h4>
+          <h4>What animal is your pet? (dog, cat, sasquatch, etc)</h4>
         <input
             type="text"
             name="animal"
@@ -52,7 +52,7 @@ export default function Home() {
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
-          <h4>Character Type (a noun, i.e. superhero, villian, rockstar)</h4>
+          <h4>What kind of character are they? (a noun, i.e. superhero, villian, taxi driver...)</h4>
           <input
             type="text"
             name="type"
