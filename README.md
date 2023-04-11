@@ -2,9 +2,7 @@
 
 Hosted at: [https://open-ai-demo-jessi.herokuapp.com/](https://open-ai-demo-jessi.herokuapp.com/)
 
-Little demo app using Next.js/Node.js to begin playing around with OpenAI's public API. Started from a tutorial ([quickstart tutorial](https://platform.openai.com/docs/quickstart)), and building further on my own. It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/).
-
-![Text box that says name my pet with an icon of a dog](https://user-images.githubusercontent.com/10623307/213887080-b2bc4645-7fdb-4dbd-ae42-efce00d0dc29.png)
+Little demo app using [Next.js](https://nextjs.org/)/[React](https://reactjs.org/)/[Node.js](https://nodejs.org/en) to begin playing around with OpenAI's public API. Started from a tutorial ([quickstart tutorial](https://platform.openai.com/docs/quickstart)), and building further on my own.
 
 
 ## Setup
@@ -24,18 +22,7 @@ Little demo app using Next.js/Node.js to begin playing around with OpenAI's publ
    ```bash
    $ npm install
    ```
-
-5. Make a copy of the example environment variables file
-
-   On Linux systems: 
-   ```bash
-   $ cp .env.example .env
-   ```
-   On Windows:
-   ```powershell
-   $ copy .env.example .env
-   ```
-6. Add your [API key](https://platform.openai.com/account/api-keys) to the newly created `.env` file
+6. Add your [API key](https://platform.openai.com/account/api-keys) to the `.env` file
 
 7. Run the app
 
@@ -43,4 +30,4 @@ Little demo app using Next.js/Node.js to begin playing around with OpenAI's publ
    $ npm run dev
    ```
 
-You should now be able to access the app at [http://localhost:3000](http://localhost:3000)! For the full context behind this example app, check out the [tutorial](https://platform.openai.com/docs/quickstart).
+You should now be able to access the app at [http://localhost:3000](http://localhost:3000)!
