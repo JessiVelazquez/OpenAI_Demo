@@ -60,7 +60,7 @@ export default function Home() {
             </label>
           ))}
         </div>
-        <h4>Animal (dog, cat, sasquatch, etc)</h4>
+        <h4>What animal is your pet? (dog, cat, sasquatch, etc)</h4>
         <input
             type="text"
             name="animal"
