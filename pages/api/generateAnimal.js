@@ -16,6 +16,7 @@ export default async function (req, res) {
     return;
   }
 
+  const model = parseModel(req.body.model);
   const animal = req.body.animal || '';
   const type = req.body.type || '';
   if (animal.trim().length === 0) {
@@ -35,6 +36,7 @@ export default async function (req, res) {
     return;
   }
 
+  console.log('models', models.davinci3);
   try {
     const completion = await openai.createCompletion({
       model: models.davinci3,
@@ -56,6 +58,10 @@ export default async function (req, res) {
       });
     }
   }
+}
+
+function parseModel(model) {
+  return Object.entries(models).find(opt => model === opt[0])[1];
 }
 
 function generatePrompt(animal, type) {
