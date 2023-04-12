@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
+import models from "./api/models.js"
 
 export default function Home() {
+  const [modelInput, setModelInput] = useState("davinci3");
   const [animalInput, setAnimalInput] = useState("");
   const [typeInput, setTypeInput] = useState("");
   const [result, setResult] = useState();
@@ -15,7 +17,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput, type: typeInput }),
+        body: JSON.stringify({ model: modelInput, animal: animalInput, type: typeInput }),
       });
 
       const data = await response.json();
@@ -42,9 +44,23 @@ export default function Home() {
 
       <main className={styles.main}>
         <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        <h3>Name Your Pet!</h3>
         <form onSubmit={onSubmit}>
-          <h4>Animal (dog, cat, sasquatch, etc)</h4>
+        <h4>Choose your AI Model (Davinci3 is recommended):</h4>
+        <div>
+          {Object.keys(models).map((model) => (
+            <label key={model}>
+              <input
+                type="radio"
+                value={model}
+                checked={modelInput === model}
+                onChange={(e) => setModelInput(e.target.value)}
+              />
+              {model}
+            </label>
+          ))}
+        </div>
+        <h4>Animal (dog, cat, sasquatch, etc)</h4>
         <input
             type="text"
             name="animal"
