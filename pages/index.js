@@ -52,7 +52,7 @@ export default function Home() {
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
-          <h4>What kind of character are they? (a noun, i.e. superhero, villian, taxi driver...)</h4>
+          <h4>What kind of character are they? (i.e. superhero, villian, taxi driver, pizza lover...)</h4>
           <input
             type="text"
             name="type"
