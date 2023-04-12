@@ -44,7 +44,7 @@ export default function Home() {
         <img src="/dog.png" className={styles.icon} />
         <h3>Name my pet</h3>
         <form onSubmit={onSubmit}>
-          <h4>What animal is your pet? (dog, cat, sasquatch, etc)</h4>
+          <h4>What kind of animal is your pet?</h4>
         <input
             type="text"
             name="animal"
